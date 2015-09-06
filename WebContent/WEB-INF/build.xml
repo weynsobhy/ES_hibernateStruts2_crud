@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HibernateStruts2_crud" default="schemaexport">
+	<target name="init">
+		<property name="base" value="" />
+		<property name="bin" value="" />
+		<property name="src=" value="" />
+		<property name="lib" value="" />
+	</target>
+
+	<target name="schemaexport" depends="init">
+		<taskdef name="HibernateTools" classname="org.hibernate.tool.ant.HibernateToolTask">
+			<classpath>
+				<!-- this is define library for Hibernate Tools placed -->
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+				<!-- this path location will define the classes places -->
+				<path location="classes"></path>
+			</classpath>
+		</taskdef>
+		<HibernateTools destdir="">
+			<annotationconfiguration configurationfile="hibernate.cfg.xml" />
+			<!-- to display query sql on console set console = true; to disable set
+				false -->
+			<hbm2ddl drop="true" console="true" create="true"
+				outputfilename="hibernate-ddl.sql" delimiter=";" export="true" />
+		</HibernateTools>
+	</target>
+</project>

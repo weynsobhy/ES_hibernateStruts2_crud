@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory name="HibernateSessionFactory">
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pertanian</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+<!--
+		<property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+		<property name="hibernate.connection.password">erwinsobirin</property>
+		<property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost:1433/forsqlserver</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>-->
+
+		<mapping class="model.Petani" />
+		<mapping class="model.Sawah" />
+		<mapping class="model.Transaksi" />
+
+	</session-factory>
+</hibernate-configuration>

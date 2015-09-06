@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="data-package" extends="main-package" >
+		<action name="DaftarPetaniBaru" class="action.PetaniAction" method="DaftarPetaniBaru">
+			<result name="success">/Jsp/home.jsp</result>
+			<result name="input">/Jsp/home.jsp</result>
+		</action>
+		<action name="ViewList" class="action.PetaniAction" method="DataPetani">
+			<result name="success">/Jsp/listpengguna.jsp</result>
+			<result name="input">/Jsp/home.jsp</result>
+		</action>
+		<action name="Lihatdata" class="action.PetaniAction" method="Lihatdata">
+			<result name="success">/Jsp/viewpengguna.jsp</result>
+			<result name="input">/Jsp/home.jsp</result>
+		</action>
+		
+	</package>
+
+
+</struts>
